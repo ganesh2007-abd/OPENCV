@@ -1,0 +1,12 @@
+import cv2 as cv
+import numpy as np
+
+img = cv.imread("IMAGES_TUTS\Sample_Imgs\Virat.jpg")
+gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+cv.imshow("GrayScale",gray)
+
+lap = cv.Laplacian(gray,cv.CV_64F)
+lap = np.uint8(np.absolute(lap))
+cv.imshow("Laplace",lap)
+
+cv.waitKey(0)
